@@ -1,0 +1,13 @@
+from pathlib import Path
+
+from src.builder import build_directory_manifest
+from src.repository import load, save
+
+if __name__ == "__main__":
+    # parameters
+    root_path: Path = Path("./src")
+    allowed_types = ["*.py"]
+
+    manifest = build_directory_manifest(root_path, allowed_types)
+    disk_path = save(manifest)
+    rebuild_manifest = load(root_path)

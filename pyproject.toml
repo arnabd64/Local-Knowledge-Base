@@ -1,0 +1,28 @@
+[project]
+name = "local-knowledge-base"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "arnabd64", email = "arnabdhar32@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+add-bounds = "major"
+no-cache = true
+link-mode = "copy"
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "F", # Pyflakes
+    "I", # isort
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.3,<0.18.0",
+]
+
